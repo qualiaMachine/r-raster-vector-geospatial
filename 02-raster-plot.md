@@ -96,18 +96,14 @@ and `count()` functions:
 
 ```r
 DSM_HARV_df %>%
-        group_by(fct_elevation) %>%
-        count()
+        count(fct_elevation)
 ```
 
 ```{.output}
-# A tibble: 3 × 2
-# Groups:   fct_elevation [3]
   fct_elevation       n
-  <fct>           <int>
-1 (305,342]      418891
-2 (342,379]     1530073
-3 (379,416]      370835
+1     (305,342]  418891
+2     (342,379] 1530073
+3     (379,416]  370835
 ```
 
 We might prefer to customize the cutoff values for these groups.
@@ -159,18 +155,14 @@ And we can get the count of values in each group in the same way we did before:
 
 ```r
 DSM_HARV_df %>%
-  group_by(fct_elevation_2) %>%
-  count()
+  count(fct_elevation_2)
 ```
 
 ```{.output}
-# A tibble: 3 × 2
-# Groups:   fct_elevation_2 [3]
   fct_elevation_2       n
-  <fct>             <int>
-1 (300,350]        741815
-2 (350,400]       1567316
-3 (400,450]         10668
+1       (300,350]  741815
+2       (350,400] 1567316
+3       (400,450]   10668
 ```
 
 We can use those groups to plot our raster data, with each group being a 
